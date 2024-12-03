@@ -1,0 +1,440 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: smaller;
+    height: 100%; /* Asegura que cubra toda la pantalla */
+    background-image: url('black-1072366_1280.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Escalar la imagen para cubrir la pantalla */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+h2 {
+    margin-top:35px;
+    background-color: #4a494c91; /* Fondo blanco */
+    padding: 1px; /* Añade un poco de relleno para separar el texto del borde */
+    border-radius: 40%; /* Bordes redondeados */
+    color: #ffffff; /* Color del texto */
+    box-shadow: 0 5px 32px #ffffff; /* Sombra para que coincida con el estilo de otros elementos */
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Estilo para el cuadro de bienvenida */
+.welcome-box {
+    background-color: #ffffff47; /* Gris claro */
+    box-shadow: 0 8px 16px rgb(0 0 0 / 47%);
+    color: #ffffff;
+    padding: 20px;
+    margin: 45px auto;
+    text-align: center;
+    border-radius: 10px; /* Esquinas redondeadas */
+    max-width: 80%; /* Ancho máximo */
+}
+
+/* Estilo para la imagen del logotipo */
+.logo {
+    display: block;
+    margin: 250px auto;
+    width: 50%; /* Ocupa el 25% de la pantalla */
+    max-width: 50%; /* Evita que sea demasiado grande en pantallas pequeñas */
+    height: 100%; /* Mantiene la proporción de la imagen */
+}
+
+/* Menú lateral */
+.sidebar {
+    height: 100%;
+    overflow-y: auto;
+    width: 17%;
+    position: fixed;
+    top: 0px;
+    left: 0px; /* Cambiamos el valor de left a 0px para que se muestre por defecto */
+    background-color: #33333385;
+    padding-top: 25px;
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+/* Esta sección proporciona el comportamiento a los sub-elementos */
+.sidebar ul {
+    list-style: none;
+    padding: 0px 5px 5px 5px;
+    
+}
+
+.sidebar ul li {
+    padding: 0px;
+    margin: 0; /* Asegura que no haya márgenes que reduzcan el área clicable */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0; /* Asegura que no haya márgenes que reduzcan el área clicable */
+    display: block; /* Asegura que el enlace ocupe toda el área del contenedor */
+    padding: 10px; /* Añade un relleno para hacerlo más fácil de hacer clic */
+}
+
+.sidebar ul .sub-menu {
+    display: none; /* Se oculta el submenú por defecto */
+    padding-left: 20px;
+}
+
+.sidebar ul .sub-menu.active {
+    display: block; /* Se muestra el submenú cuando tiene la clase 'active' */
+}
+
+.sidebar a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Botón para abrir/cerrar el menú */
+.openbtn, .closebtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding:  5px 10px 10px 15px;
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    z-index: 3000;
+}
+
+.openbtn {
+    left: 10px;
+}
+
+.closebtn {
+    left: 0px;
+    position: fixed; /* Fija la barra en la parte superior */
+
+}
+
+
+
+/* Estilos de contenido */
+.main-content {
+    margin: 15px;
+    padding: 1px;
+    transition: margin-left 0.3s;
+    font-size: smaller;
+}
+
+/* Estilos para la barra superior */
+.topbar {
+    background-color: #33333385; /* Cambia el color según tus preferencias */
+    color: white;
+    padding: 5px 0px 5px 0%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Posición en la parte superior de la pantalla */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 50px;
+}
+
+.avatar {
+    background-color: #ffffff;
+    color: #000912; /* Cambia el color según tus preferencias */
+    border-radius: 100%;
+    text-decoration:underline;
+    font: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.username {
+    margin-right: 10px;
+}
+
+.date-time {
+    margin-right: 20px;
+}
+
+.dropdown-content {
+    min-width: 0px;
+    margin:  150px 5px 0px -30px;
+    padding: 10px 10px 10px 10px ;
+    min-width: 200px;
+    display:none;
+    position: absolute;
+    background-color: #333333a3;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #ffffff; /* Cambia el color según tus preferencias */
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.show {
+    display: block;
+}
+
+
+
+/* Estilos para el grid layout */
+.content-grid {
+    margin: 1px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.content-subgrid {
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulario */
+.form-container {
+    background-color: #f4f4f4;
+    padding: 4px;
+    border-radius: 8px;
+
+}
+
+form label {
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size:14px;
+}
+
+form input, form textarea, form select{
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size:12px;
+}
+
+form button {
+    background-color: #314d6a;
+    color: white;
+    border: none;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size:12px;
+}
+
+form button:hover {
+    background-color: #6e8ba9;
+}
+
+input[type="submit"] {
+    background-color: #314d6a; /* Color de fondo (verde) */
+    color: white;              /* Color del texto */
+    border: none;              /* Quitar bordes */
+    padding: 1px  2px 2px 2px ;        /* Espaciado interno */
+    text-align: center;        /* Alineación del texto */
+    text-decoration: none;     /* Quitar subrayado */
+    display: inline-block;     /* Mostrar en línea */
+    font-size: 14px;           /* Tamaño de la fuente */
+    margin: 4px 2px;           /* Espaciado alrededor */
+    cursor: pointer;           /* Mostrar cursor de mano */
+    border-radius: 5px;        /* Bordes redondeados */
+}
+
+input[type="submit"]:hover {
+    background-color: #6e8ba9; /* Color de fondo al pasar el mouse */
+}
+
+input[type="button"] {
+    background-color: #314d6a; /* Color de fondo (azul) */
+    color: white;              /* Color del texto */
+    border: none;              /* Quitar bordes */
+    padding: 10px 20px;        /* Espaciado interno */
+    text-align: center;        /* Alineación del texto */
+    text-decoration: none;     /* Quitar subrayado */
+    display: inline-block;     /* Mostrar en línea */
+    font-size: 14px;           /* Tamaño de la fuente */
+    margin: 4px 2px;           /* Espaciado alrededor */
+    cursor: pointer;           /* Mostrar cursor de mano */
+    border-radius: 5px;        /* Bordes redondeados */
+}
+
+input[type="button"]:hover {
+    background-color: #6e8ba9; /* Color de fondo al pasar el mouse */
+}
+
+/*contenedor de botones */
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* O 'center', dependiendo de la alineación deseada */
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+form button, input[type="submit"], input[type="button"] {
+    flex: 1; /* Hace que los botones ocupen el mismo ancho */
+    text-align: center;
+    padding: 10px 20px;
+    margin: 4px 0; /* Ajusta los márgenes para una mejor distribución */
+}
+
+/* Tabla */
+.table-container {
+    background-color: #f4f4f4ea;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: -webkit-center;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* DiseÃƒÂ±o responsive */
+@media screen and (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+    .closebtn {
+        left: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 150px;
+        left: -150px;
+    }
+    .closebtn {
+        left: 130px;
+    }
+}
+
+/*SECCIÃ“N PARA DEFINIR EL DISEÃ‘O DE LA PAGINACIÃ“N*/
+
+.pagination {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.pagination button {
+    padding: 5px 20px;
+    margin: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #314d6a;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pagination select {
+    display: inline-block;
+    width: 50px;
+    margin-left: 10px;
+}
+
+.pagination {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* DISEÑO DE FORMULARIOS DE CARGA */
+
+.upload-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.button-group {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.error-message {
+    color: red;
+    margin: 1rem 0;
+}
+.success-message {
+    color: green;
+    margin: 1rem 0;
+}
+.file-info {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+
+    
